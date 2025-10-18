@@ -1,0 +1,70 @@
+/**
+ * CAARU Membership Public-Facing CSS
+ * Self-contained styles for a professional and robust form experience.
+ */
+:root { --caaru-primary: #4f46e5; --caaru-primary-dark: #4338ca; --caaru-rose: #db2777; --caaru-rose-dark: #be185d; --caaru-border: #d1d5db; --caaru-text-label: #4b5563; --caaru-text-heading: #1f2937; --caaru-text-body: #374151; }
+.caaru-form-wrapper { max-width: 56rem; margin: auto; padding: 1rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+@media (min-width: 640px) { .caaru-form-wrapper { padding: 1.5rem; } }
+.caaru-form-card { background-color: #fff; padding: 1.5rem 2rem; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; }
+.form-header { text-align: center; margin-bottom: 2.5rem; }
+.form-title { font-size: 1.875rem; font-weight: 800; color: var(--caaru-text-heading); line-height: 1.2; }
+.form-subtitle { color: #6b7280; margin-top: 0.5rem; font-size: 1rem; }
+.form-section { border-top: 1px solid #e5e7eb; padding-top: 2rem; }
+.section-title { font-size: 1.25rem; font-weight: 700; color: var(--caaru-text-heading); margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid #f3f4f6;}
+.grid { display: grid; } .grid-cols-1 { grid-template-columns: 1fr; }
+.gap-x-6 { column-gap: 1.5rem; } .gap-y-4 { row-gap: 1rem; } .gap-y-5 { row-gap: 1.25rem; }
+.space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.75rem; }
+.space-y-10 > :not([hidden]) ~ :not([hidden]) { margin-top: 2.5rem; }
+@media (min-width: 768px) { .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); } .md\:col-span-2 { grid-column: span 2 / span 2; } }
+@media (min-width: 1024px) { .lg\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); } }
+.form-label { display: block; font-size: 0.875rem; font-weight: 500; color: var(--caaru-text-label); margin-bottom: 0.375rem; }
+.required-asterisk { color: #ef4444; font-weight: normal; margin-left: 2px; }
+.form-input { display: block; width: 100%; border-radius: 0.375rem; border: 1px solid var(--caaru-border); box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); padding: 0.6rem 0.8rem; transition: all 0.2s; background-color: #fff; }
+.form-input:focus { outline: 0; border-color: var(--caaru-primary); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); }
+.options-group { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.5rem; padding-top: 0.25rem; }
+.option-label { display: inline-flex; align-items: center; cursor: pointer; }
+.option-label span { margin-left: 0.5rem; color: var(--caaru-text-body); }
+.form-checkbox, .form-radio { height: 1.1em; width: 1.1em; border-radius: 0.25rem; border: 1px solid var(--caaru-border); color: var(--caaru-primary); transition: all 0.2s; }
+.form-radio { border-radius: 9999px; }
+.form-checkbox:focus, .form-radio:focus { box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); border-color: var(--caaru-primary); }
+.education-block { margin-bottom: 1.5rem; border-bottom: 1px solid #f3f4f6; padding-bottom: 1.5rem; }
+.education-block:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+.education-degree-title { font-size: 1rem; font-weight: 600; color: var(--caaru-text-body); margin-bottom: 1rem; }
+.form-footer { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid #e5e7eb; text-align: center; }
+.submit-button { background-color: var(--caaru-rose); color: #fff; font-weight: 700; padding: 0.75rem 2.5rem; border-radius: 9999px; transition: all 0.3s; display: inline-flex; align-items: center; justify-content: center; font-size: 1.125rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); border: none; cursor: pointer; }
+.submit-button:hover { background-color: var(--caaru-rose-dark); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); }
+.submit-button:disabled { background-color: #f9a8d4; cursor: not-allowed; }
+.caaru-section { background-color: #fff; border: 1px solid #e5e7eb; border-radius: 0.75rem; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); overflow: hidden; transition: box-shadow 0.3s; }
+.caaru-section.open { box-shadow: 0 4px 12px 0 rgba(0,0,0,0.08); }
+.caaru-section-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; cursor: pointer; transition: background-color 0.2s; user-select: none; }
+.caaru-section-header:hover { background-color: #f9fafb; }
+.section-accordion-title { font-size: 1.125rem; font-weight: 600; color: var(--caaru-text-heading); }
+.plus-minus-icon { font-size: 1.5rem; color: #9ca3af; font-weight: 300; transition: transform 0.3s; }
+.plus-minus-icon .minus { display: none; }
+.caaru-section.open .plus-minus-icon { transform: rotate(45deg); color: var(--caaru-primary); }
+.caaru-section.open .plus-minus-icon .plus { display: none; }
+.caaru-section.open .plus-minus-icon .minus { display: block; transform: rotate(-45deg); }
+.caaru-section-content { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s cubic-bezier(0.4, 0, 0.2, 1); padding-left: 1.5rem; padding-right: 1.5rem; }
+.caaru-section.open .caaru-section-content { max-height: 3000px; padding-top: 0.5rem; padding-bottom: 1.5rem; }
+.section-footer { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid #e5e7eb; display: flex; justify-content: flex-end; align-items: center; gap: 1rem; }
+.save-confirmation { color: #16a34a; font-size: 0.875rem; font-weight: 500; opacity: 0; transition: opacity 0.3s; }
+.save-button { background-color: var(--caaru-primary); color: #fff; padding: 0.6rem 1.5rem; border-radius: 0.375rem; transition: background-color 0.2s; border: none; cursor: pointer; font-weight: 500; }
+.save-button:hover { background-color: var(--caaru-primary-dark); }
+.save-button:disabled { background-color: #a5b4fc; cursor: not-allowed; }
+.status-banner { padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem; border-left-width: 4px; }
+.banner-pending { background-color: #fef9c3; border-color: #f59e0b; color: #92400e; }
+.banner-published { background-color: #dcfce7; border-color: #22c55e; color: #15803d; }
+.caaru-alert { padding: 1rem; border-radius: 0.5rem; border-left-width: 4px; }
+.caaru-alert-error { background-color: #fee2e2; border-color: #ef4444; color: #991b1b; }
+.spinner { display: inline-block; width: 1.25rem; height: 1.25rem; margin-left: 0.75rem; margin-right: -0.25rem; border-radius: 50%; border: 2px solid transparent; border-top-color: currentColor; animation: spin 1s linear infinite; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.caaru-section-locked { background-color: #f9fafb; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.5rem; margin-top: 1.5rem; }
+.locked-content { margin-top: 1rem; font-size: 0.9rem; color: #4b5563; }
+.locked-item { display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f3f4f6; gap: 1rem; }
+.locked-item:last-child { border-bottom: none; }
+.locked-label { font-weight: 600; color: var(--caaru-text-body); }
+/* jQuery UI Autocomplete */
+.ui-autocomplete { max-height: 200px; overflow-y: auto; overflow-x: hidden; background: #fff; border: 1px solid #d1d5db; border-radius: 0.375rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); z-index: 1000; }
+.ui-menu-item { padding: 0.5rem 0.75rem; cursor: pointer; }
+.ui-menu-item-wrapper:hover, .ui-state-active { background-color: #f3f4f6; }
+
